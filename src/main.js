@@ -7,6 +7,7 @@ import 'mint-ui/lib/style.css';
 import 'css/app.scss';
 import VueResource from 'vue-resource';
 import VueRouter from 'vue-router';
+import store from './store/index';
 
 // 注册vue组件
 Vue.use(Mint);
@@ -21,5 +22,6 @@ const router = new VueRouter({
 // eslint-disable-next-line no-new
 new Vue({
     router,
+    store,
     render: h => h(App)
 }).$mount('#app');

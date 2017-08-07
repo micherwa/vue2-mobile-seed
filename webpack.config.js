@@ -3,6 +3,7 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
+var ip = require('ip');
 
 var isProd = process.env.NODE_ENV === 'production';
 
@@ -73,6 +74,7 @@ var config = {
             'directives': path.join(__dirname, './src/directives'),
             'filters': path.join(__dirname, './src/filters'),
             'utils': path.join(__dirname, './src/utils'),
+            'services': path.join(__dirname, './src/services'),
             'views': path.join(__dirname, './src/views'),
             'vue$': 'vue/dist/vue.esm.js'
         }
@@ -100,13 +102,25 @@ var config = {
         new ExtractTextPlugin({
             filename: '[name].[chunkhash].css',
             allChunks: true
+        }),
+        // 注入webpack运行的环境变量（是否为开发环境）
+        new webpack.DefinePlugin({
+            __DEV__: JSON.stringify(JSON.parse(process.env.BUILD_DEV || 'false'))
         })
     ],
     devServer: {
         // 本地环境主入口为 /src/index.html
         contentBase: './src',
         historyApiFallback: true, //不跳转
-        noInfo: true
+        noInfo: true,
+        host: ip.address(),
+        port: 8000,
+        proxy: {
+            '/mock': {
+                target: 'http://localhost:9091',
+                changeOrigin: true
+            }
+        },
     },
     performance: {
         hints: false
@@ -149,6 +163,21 @@ if (isProd) {
         // 启用作用域提升
         new webpack.optimize.ModuleConcatenationPlugin()
     ]);
+}
+
+if (!isProd) {
+    // mock server startup
+    var db = require('./mock/db.js');
+    var jsonServer = require('json-server');
+    var server = jsonServer.create();
+    var router = jsonServer.router(db);
+    var middlewares = jsonServer.defaults();
+
+    server.use(middlewares);
+    server.use('/mock', router);
+    server.listen(9091, function() {
+        console.log('Mock API Server is running!')
+    });
 }
 
 module.exports = config;

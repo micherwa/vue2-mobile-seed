@@ -41,6 +41,7 @@
     },
     // 如果想使用自定义的全局变量，可以在这里定义
     "globals": {
+        "__DEV__": true,
         "localStorage": true,
         "sessionStorage": true
     }
