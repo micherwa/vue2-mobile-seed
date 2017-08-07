@@ -1,0 +1,47 @@
+{
+    // eslint找到这个标识后，不会再去父文件夹中找eslint的配置文件
+    "root": true,
+    // 扩展一个流行的风格指南eslint-config-standard
+    "extends": "standard",
+    // 插件的包名，省略前缀eslint-plugin-
+    "plugins": [
+        "html",
+        "standard",
+        "promise"
+    ],
+    // 使用babel-eslint来作为eslint的解析器
+    "parser": "babel-eslint",
+    // 表明自己的代码是ECMAScript模块
+    "parserOptions": {
+        "sourceType": "module"
+    },
+    "rules": {
+        // 使用4格缩进
+        "indent": ["error", 4],
+        // 使用单引号
+        "quotes": ["error", "single"],
+        // 使用绝等于
+        "eqeqeq": ["warn", "allow-null"],
+        // 句末添加分号
+        "semi": ["error", "always"],
+
+        // 禁止在代码行后使用内联注释
+        no-inline-comments: "error",
+
+        // 可以使用let v1,v2,v3连续(1不可以)
+        "one-var": "off",
+
+        "no-irregular-whitespace": "off",
+    },
+    // 预定义的全局变量，这样在代码中可以放心使用宿主环境提供的全局变量。
+    "env": {
+        "browser": true,
+        "es6": true,
+        "amd": true
+    },
+    // 如果想使用自定义的全局变量，可以在这里定义
+    "globals": {
+        "localStorage": true,
+        "sessionStorage": true
+    }
+}
