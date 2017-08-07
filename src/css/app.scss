@@ -1,0 +1,15 @@
+@import "reset";
+@import "common";
+@import "margin-padding";
+@import "button";
+@import "list";
+
+#app {
+    max-width: 750px;
+    min-width: 320px;
+    margin: auto;
+    overflow: auto;
+    color: #4d4d4d;
+    height: 100%;
+    -webkit-overflow-scrolling: touch;
+}

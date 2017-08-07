@@ -1,0 +1,46 @@
+// <div class="list">
+//  <div class="item">
+//    <label class="item-label arrow">我们都是中国人！</label>
+//  </div>
+// </div>
+$height: 44px;
+$input-color: #000;
+$border-color: #d7d7d7;
+.list {
+    width: 100%;
+    background-color: #fff;
+    .item {
+        height: $height;
+        line-height: $height;
+        box-shadow: inset 0 -1px 1px -1px #D8D8D8;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+    .item-label {
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        box-sizing: border-box;
+        color: $input-color;
+        position: relative;
+    }
+    .arrow {
+        padding-right: 30px;
+        &:after {
+            display: block;
+            width: 8px;
+            height: 8px;
+            border: 2px solid #b1b1b1;
+            border-left: 0;
+            border-top: 0;
+            transform: rotate(315deg);
+            content: '';
+            position: absolute;
+            right: 18px;
+            top: 18px;
+        }
+    }
+}

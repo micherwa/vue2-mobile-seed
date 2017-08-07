@@ -14,7 +14,7 @@ var config = {
     },
     output: {
         path: path.resolve(__dirname, './dist'),
-        filename: '[name].[hash:7].js'
+        filename: '[name].[chunkhash].js'
     },
     module: {
         rules: [
@@ -24,11 +24,17 @@ var config = {
             },
             {
                 test: /\.(css)$/,
-                use: ExtractTextPlugin.extract('style-loader!css-loader')
+                loader: ExtractTextPlugin.extract({
+                    fallback: "style-loader",
+                    use: "css-loader"
+                })
             },
             {
                 test: /\.(scss)$/,
-                use: ExtractTextPlugin.extract('style-loader!css-loader!postcss-loader!sass-loader')
+                loader: ExtractTextPlugin.extract({
+                    fallback: "style-loader",
+                    use: ["css-loader", "postcss-loader", "sass-loader"]
+                })
             },
             {
                 test: /\.js$/,
@@ -90,6 +96,10 @@ var config = {
                 collapseInlineTagWhitespace: true,
                 removeRedundantAttributes: true
             }
+        }),
+        new ExtractTextPlugin({
+            filename: '[name].[chunkhash].css',
+            allChunks: true
         })
     ],
     devServer: {
@@ -106,8 +116,6 @@ var config = {
 
 if (isProd) {
     config.devtool = '#source-map';
-    // 打包后，对于根目录下的index.html，须配置绝对引用路径
-    config.output.publicPath = '/dist/';
     //把vue中内联的css拆出来，以外联引用
     config.module.rules[0].options = {
         loaders: {
@@ -120,10 +128,6 @@ if (isProd) {
 
     // http://vue-loader.vuejs.org/en/workflow/production.html
     config.plugins = (config.plugins || []).concat([
-        new ExtractTextPlugin({
-            filename: '[name].[hash:7].css',
-            allChunks: true
-        }),
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('production')
         }),

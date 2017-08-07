@@ -1,0 +1,103 @@
+$height: 44px;
+$border-radius: 4px;
+
+.btn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-size: 14px;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    user-select: none;
+    border-style: none;
+    border-radius: $border-radius;
+    font-family: inherit;
+    text-transform: none;
+    outline: none;
+}
+
+.btn-primary {
+    width: 200px;
+    height: $height;
+    color: #fff;
+    background-color: #F44336;
+    border-color: #46b8da;
+}
+
+.btn-large {
+    height: 44px;
+    width: 90%;
+    background: linear-gradient(#0099E8, #027FF3);
+    background-color: #027FF3;
+    color: #fff;
+    line-height: 44px;
+    margin: auto;
+    margin-top: 20px;
+    display: block !important;
+    font-size: 16px !important;
+}
+
+.btn-small {
+    width: 105px;
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+    background: linear-gradient(#0099E8, #027FF3);
+    background-color: #027FF3;
+    font-size: 13px !important;
+}
+
+.btn-full {
+    width: 100% !important;
+    height: $height;
+    color: #fff;
+    background-color: #F44336;
+    border-color: #eea236;
+}
+
+.btn:focus,
+.btn:hover,
+.btn:active {
+    color: #fff;
+    background-color: #F44336;
+}
+
+button[disabled] {
+    cursor: default;
+    background: #CCCCCC !important;
+    height: $height;
+    overflow: visible;
+    text-overflow: ellipsis;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    display: inline-block;
+    text-align: center;
+    color: #FFFFFF;
+    border: none;
+    border-radius: $border-radius;
+    border: none;
+    outline: none;
+    padding: 0px 15px;
+}
+
+button[disabled]:focus,
+button[disabled]:hover,
+button[disabled]:active {
+    color: #FFFFFF;
+    background-color: #CCCCCC;
+}
+
+// defualt button style
+.button {
+    border-style: none;
+    width: auto;
+    overflow: visible;
+    text-align: center;
+    outline: none;
+    background-color: #fff;
+    border-radius: $border-radius;
+    margin: auto;
+}
