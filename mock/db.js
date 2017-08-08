@@ -1,5 +1,6 @@
-const userList = require('./user').userList;
+let user = require('./user');
+let userList = user.userList;
 
 module.exports = {
-    userList,
+    userList
 };

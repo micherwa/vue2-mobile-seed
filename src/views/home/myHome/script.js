@@ -17,8 +17,8 @@ export default {
     },
     methods: {
         async load () {
-            const userList = await this.$store.dispatch('getUsers');
-            console.log(JSON.stringify(userList));
-        },
+            const userList = await this.$store.dispatch('getUsers', [1,10]);
+            console.log(userList);
+        }
     }
 };

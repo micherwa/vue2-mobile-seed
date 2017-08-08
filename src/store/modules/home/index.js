@@ -10,7 +10,7 @@ const state = {
 */
 const mutations = {
     [types.GET_USERS] (state, resp) {
-        state.users = resp.result ? resp.result : {};
+        state.users = resp.result ? resp.result : [];
     }
 };
 

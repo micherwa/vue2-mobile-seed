@@ -5,9 +5,9 @@ import App from './views/app.vue';
 import Mint from 'mint-ui';
 import 'mint-ui/lib/style.css';
 import 'css/app.scss';
+import store from './store/index';
 import VueResource from 'vue-resource';
 import VueRouter from 'vue-router';
-import store from './store/index';
 
 // 注册vue组件
 Vue.use(Mint);

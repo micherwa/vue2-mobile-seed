@@ -65,6 +65,7 @@ var config = {
         ]
     },
     resolve: {
+        extensions: ['*', '.vue', '.js'],
         alias: {
             'src': path.join(__dirname, './src'),
             'css': path.join(__dirname, './src/css'),
@@ -76,7 +77,7 @@ var config = {
             'utils': path.join(__dirname, './src/utils'),
             'services': path.join(__dirname, './src/services'),
             'views': path.join(__dirname, './src/views'),
-            'vue$': 'vue/dist/vue.esm.js'
+            'vue$': 'vue/dist/vue.js'
         }
     },
     plugins: [
@@ -106,7 +107,9 @@ var config = {
         // 注入webpack运行的环境变量（是否为开发环境）
         new webpack.DefinePlugin({
             __DEV__: JSON.stringify(JSON.parse(process.env.BUILD_DEV || 'false'))
-        })
+        }),
+        // 启用作用域提升
+        new webpack.optimize.ModuleConcatenationPlugin()
     ],
     devServer: {
         // 本地环境主入口为 /src/index.html
@@ -117,9 +120,9 @@ var config = {
         port: 8000,
         proxy: {
             '/mock': {
-                target: 'http://localhost:9091',
-                changeOrigin: true
-            }
+                target: 'http://localhost:9000'
+            },
+            changeOrigin: true
         },
     },
     performance: {
@@ -159,9 +162,7 @@ if (isProd) {
         }),
         new webpack.LoaderOptionsPlugin({
             minimize: true
-        }),
-        // 启用作用域提升
-        new webpack.optimize.ModuleConcatenationPlugin()
+        })
     ]);
 }
 
@@ -175,7 +176,7 @@ if (!isProd) {
 
     server.use(middlewares);
     server.use('/mock', router);
-    server.listen(9091, function() {
+    server.listen(9000, function() {
         console.log('Mock API Server is running!')
     });
 }
