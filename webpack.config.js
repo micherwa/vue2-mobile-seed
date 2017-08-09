@@ -15,7 +15,8 @@ var config = {
     },
     output: {
         path: path.resolve(__dirname, './dist'),
-        filename: '[name].[chunkhash].js'
+        filename: '[name].[chunkhash:7].js',
+        chunkFilename: '[name].[chunkhash:7].js'
     },
     module: {
         rules: [
@@ -101,7 +102,7 @@ var config = {
             }
         }),
         new ExtractTextPlugin({
-            filename: '[name].[chunkhash].css',
+            filename: '[name].[chunkhash:7].css',
             allChunks: true
         }),
         // 注入webpack运行的环境变量（是否为开发环境）
@@ -162,7 +163,9 @@ if (isProd) {
         }),
         new webpack.LoaderOptionsPlugin({
             minimize: true
-        })
+        }),
+        // optimize module ids by occurrence count
+        new webpack.optimize.OccurrenceOrderPlugin()
     ]);
 }
 

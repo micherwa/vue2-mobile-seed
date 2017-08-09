@@ -1,5 +1,4 @@
 import { mapGetters } from 'vuex';
-import { MessageBox, Toast } from 'mint-ui';
 
 export default {
     data () {
@@ -17,7 +16,7 @@ export default {
     },
     methods: {
         async load () {
-            const userList = await this.$store.dispatch('getUsers', [1,10]);
+            const userList = await this.$store.dispatch('getUsers', [1, 10]);
             console.log(userList);
         }
     }

@@ -1,8 +1,9 @@
 <template>
     <div class="home">
-        users:{{users}}
-        <div v-for="item in users">
-            {{item.id}}==={{item.name}}
+        <div class="list" v-for="item in users">
+            <div class="item">
+                <label class="item-label arrow" :id="'item-'+item.id">{{item.name}}</label>
+            </div>
         </div>
     </div>
 </template>
