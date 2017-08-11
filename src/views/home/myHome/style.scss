@@ -1,3 +1,12 @@
 .home {
     height: 100%;
+    .img-rem-wrapper {
+        padding: 15px 10px;
+        .img-rem {
+            background:url('/assets/img-artboard.png') no-repeat left top;
+            width: 5.74rem;
+            height: 1.94rem;
+            background-size: contain;
+        }
+    }
 }
