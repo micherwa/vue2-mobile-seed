@@ -1,0 +1,33 @@
+<!--
+  <Checkbox
+      value="123456"
+      label="选择"
+      align="left"
+      :checked="false"
+      :disabled="false"
+      :on-change="handleChange">
+  </Checkbox>
+-->
+
+<label class="ui-checkbox">
+    <span
+        class="checkbox-label pull-left"
+        v-html="itemObjectData.label"
+        v-if="itemObjectData.align === 'left'">
+    </span>
+    <input
+        v-model="itemObjectData.checked"
+        :disabled="itemObjectData.disabled"
+        @change="handleChange"
+        class="ui-checkbox-input"
+        type="checkbox"
+    />
+    <span class="ui-checkbox-box">
+        <label class="inner"></label>
+    </span>
+    <span
+        class="checkbox-label"
+        v-html="itemObjectData.label"
+        v-if="itemObjectData.align === 'right' ">
+    </span>
+</label>

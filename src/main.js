@@ -8,6 +8,7 @@ import 'css/app.scss';
 import store from './store/index';
 import VueResource from 'vue-resource';
 import VueRouter from 'vue-router';
+import 'components';
 
 // 注册vue组件
 Vue.use(Mint);

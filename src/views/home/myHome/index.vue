@@ -11,7 +11,22 @@
             <div class="img-rem m-t-10"></div>
         </div>
 
+        <button class="btn btn-default m-l-10" @click="showMyModal = true">show my modal</button>
 
+        <div class="p-t-20 p-l-10">
+            <Checkbox value="123" label="选择" align="right"
+             :checked="false" :disabled="false" :on-change="handleChange">
+            </Checkbox>
+        </div>
+
+        <div class="modal-slot">
+            <MyModal v-if="showMyModal" @close="showMyModal = false" @confirm="handleConfirm">
+                <h3 slot="header">header</h3>
+                <div slot="body">
+                    <input type="tel" placeholder="请输入手机号" v-model="mobilePhone" maxlength="11" />
+                </div>
+            </MyModal>
+        </div>
     </div>
 </template>
 <style lang="scss" src="./style.scss"></style>

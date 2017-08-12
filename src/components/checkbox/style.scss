@@ -1,0 +1,74 @@
+
+$border-color-gray: #ddd;
+// blue color
+$border-color-checked: #027FF3;
+
+$border-color-disabled: #027FF3;
+
+.ui-checkbox {
+    cursor: pointer;
+    user-select: none;
+    // 外部
+    .ui-checkbox-box {
+        background-color: #fff;
+        border: 1px solid $border-color-gray;
+        display: inline-block;
+        height: 20px;
+        width: 20px;
+        vertical-align: bottom;
+        line-height: 1;
+        position: relative;
+        box-sizing: border-box;
+        margin-left: 6px;
+    }
+    input {
+        display: none;
+    }
+    // 对勾
+    input:checked + .ui-checkbox-box:after {
+        content: '';
+        display: inline-block;
+        height: 8px;
+        width: 4px;
+        border: 2px solid $border-color-checked;
+        border-left: 0;
+        border-top: 0;
+        transform: rotate(45deg) scale(1);
+        transition: all 2s cubic-bezier(.71, -.46, .88, .6);
+        margin-left: 6px;
+        margin-top: 3px;
+    }
+    input:checked + .ui-checkbox-box {
+        border: 1px solid $border-color-checked;
+    }
+    //内部填充的蓝色
+    input:checked + .ui-checkbox-box .inner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        background-color: #fff;
+        width: 100%;
+        height: 100%;
+        transition: all .3s;
+    }
+    .ui-checkbox-label,
+    .ui-checkbox-box {
+        cursor: pointer;
+    }
+    // 禁用效果
+    input:disabled + .ui-checkbox-box,
+    input:disabled + .ui-checkbox-box .inner {
+        background-color: $border-color-disabled;
+        cursor: not-allowed;
+    }
+    input:disabled + .ui-checkbox-box {
+        cursor: not-allowed;
+        border: 1px solid $border-color-disabled;
+    }
+    .checkbox-label {
+        vertical-align: top;
+        color: #333;
+        font-size: 15px;
+    }
+}

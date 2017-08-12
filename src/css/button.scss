@@ -18,6 +18,15 @@ $border-radius: 4px;
     outline: none;
 }
 
+.btn-default {
+    width: 200px;
+    height: $height;
+    color: #fff;
+    background: linear-gradient(#0099E8, #027FF3);
+    background-color: #027FF3;
+    border-color: #46b8da;
+}
+
 .btn-primary {
     width: 200px;
     height: $height;
@@ -27,12 +36,12 @@ $border-radius: 4px;
 }
 
 .btn-large {
-    height: 44px;
+    height: $height;
     width: 90%;
     background: linear-gradient(#0099E8, #027FF3);
     background-color: #027FF3;
     color: #fff;
-    line-height: 44px;
+    line-height: $height;
     margin: auto;
     margin-top: 20px;
     display: block !important;
