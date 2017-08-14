@@ -109,7 +109,7 @@ var config = {
         new webpack.DefinePlugin({
             __DEV__: JSON.stringify(JSON.parse(process.env.BUILD_DEV || 'false'))
         }),
-        // 启用作用域提升
+        // 启用作用域提升,让代码文件更小、运行的更快
         new webpack.optimize.ModuleConcatenationPlugin()
     ],
     devServer: {
@@ -138,8 +138,8 @@ if (isProd) {
     config.module.rules[0].options = {
         loaders: {
             sass: ExtractTextPlugin.extract({
-              use: ['css-loader','sass-loader'],
-              fallback: 'vue-style-loader'
+                use: ['css-loader','sass-loader'],
+                fallback: 'vue-style-loader'
             }),
         }
     };
@@ -158,7 +158,9 @@ if (isProd) {
         new webpack.optimize.UglifyJsPlugin({
             sourceMap: true,
             compress: {
-                warnings: false
+                warnings: false,
+                // 去除vue和js中的console.*函数
+                drop_console: true
             }
         }),
         new webpack.LoaderOptionsPlugin({
