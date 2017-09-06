@@ -110,7 +110,9 @@ var config = {
             __DEV__: JSON.stringify(JSON.parse(process.env.BUILD_DEV || 'false'))
         }),
         // 启用作用域提升,让代码文件更小、运行的更快
-        new webpack.optimize.ModuleConcatenationPlugin()
+        new webpack.optimize.ModuleConcatenationPlugin(),
+        // 压缩打包后moment的大小
+        new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /en|zh/)
     ],
     devServer: {
         // 本地环境主入口为 /src/index.html
