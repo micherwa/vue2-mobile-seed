@@ -22,7 +22,7 @@ yarn == yarn install
 # add/remove/upgrade packages
 yarn add/remove/upgrade package-name -D
 
-# serve with hot reload at localhost:8080
+# serve with hot reload at http://xxx.xxx.xxx.xxx:8000
 npm start
 
 # build for production with minification
@@ -30,21 +30,6 @@ npm run build
 
 # check and fix code rules
 npm run eslint
-```
-
-## 命名规则
-
-```
-1. 文件夹命名：aB；
-2. 文件命名（js、css、vue、html）：aB.*；
-3. 样式class命名：a-b；
-4. image命名：a-b；
-5. js变量命名：aB；
-6. js常量命名：A_B；
-7. js私有变量或方法：_aB；
-8. js方法的返回值如果是布尔值，方法名则以is、can、has、should等为前缀；
-9. service命名：Ab;
-10. component命名：Ab;
 ```
 
 
