@@ -8,15 +8,14 @@ var ip = require('ip');
 var isProd = process.env.NODE_ENV === 'production';
 
 var config = {
-    // 定义主入口从 src 下开始找，忽略根目录的index.html
+    // 定义主入口从 src 下开始找
     context: path.join(__dirname, './src'),
     entry: {
         app: './main.js'
     },
     output: {
         path: path.resolve(__dirname, './dist'),
-        filename: '[name].[chunkhash:7].js',
-        chunkFilename: '[name].[chunkhash:7].js'
+        filename: '[name].[chunkhash:7].js'
     },
     module: {
         rules: [
@@ -49,7 +48,7 @@ var config = {
             },
             {
                 test: /\.(png|jpg|jpeg|gif|svg|ico)$/,
-                use: ['url-loader?limit=4096&name=[path][name].[ext]?[hash:7]', 'image-webpack-loader']
+                use: ['url-loader?limit=4096&name=[path][name].[ext]?[hash:7]']
             },
             {
                 test: /\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/,
