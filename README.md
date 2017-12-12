@@ -5,12 +5,12 @@
 
 ## 运行环境
 
-> `nodejs v6.11.0` `npm 3.10.10`
+> `nodejs v8.7.0` `npm 5.4.2`
 
 
 ## 技术栈
 
-> `vue2` `vue-router` `mint-ui` `sass` `webpack3` `es6` `lodash`
+> `vue2` `vue-router` `axios` `vuex` `mint-ui` `sass` `webpack3` `es6` `lodash` `moment`
 
 
 ## 构建命令
@@ -36,7 +36,7 @@ npm run eslint
 ## 备注
 
 ```
-1. 在页面中添加img的时候，请尽量使用css background-image，避免webpack无法暂时对html img src支持不友好问题.
+1. 在页面中添加img的时候，尽量使用css background-image，避免webpack无法暂时对html img src支持不友好问题.
 2. 项目中使用EditorConfig来定义代码风格,需要安装相关编辑器的插件[查看对应编辑器插件](https://github.com/sindresorhus/editorconfig-sublime#readme)
 3.npm run eslint 会自动修复部分`js`文件错误，`vue`文件的js部分错误，`scss`文件错误无法修复
 ```
