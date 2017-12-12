@@ -1,4 +1,5 @@
 import { mapGetters } from 'vuex';
+import _ from 'lodash';
 
 export default {
     data () {
@@ -17,8 +18,8 @@ export default {
     },
     methods: {
         async load () {
-            const userList = await this.$store.dispatch('getUsers', [1, 10]);
-            console.log(userList);
+            await this.$store.dispatch('getUsers');
+            console.log(_.find(this.users, {'id': 1}));
         },
         handleConfirm () {
             this.showMyModal = false;

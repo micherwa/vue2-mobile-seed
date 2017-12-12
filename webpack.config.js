@@ -3,6 +3,7 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
+var LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 var ip = require('ip');
 
 var isProd = process.env.NODE_ENV === 'production';
@@ -111,7 +112,11 @@ var config = {
         // 启用作用域提升,让代码文件更小、运行的更快
         new webpack.optimize.ModuleConcatenationPlugin(),
         // 压缩打包后moment的大小，只引入中英文版本
-        new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /en|zh/)
+        new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /en|zh/),
+        // 按需加载，只压缩用到的方法
+        new LodashModuleReplacementPlugin({
+            'shorthands': true
+        })
     ],
     devServer: {
         // 本地环境主入口为 /src/index.html
@@ -165,9 +170,9 @@ if (isProd) {
                 drop_console: true
             }
         }),
-        new webpack.LoaderOptionsPlugin({
-            minimize: true
-        }),
+        // new webpack.LoaderOptionsPlugin({
+        //     minimize: true
+        // }),
         // optimize module ids by occurrence count
         new webpack.optimize.OccurrenceOrderPlugin()
     ]);

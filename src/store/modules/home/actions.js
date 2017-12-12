@@ -1,9 +1,9 @@
 import UserService from 'services/UserService';
 import * as types from './types';
 
-export async function getUsers ({ commit }, [_start, _limit]) {
-    const response = await UserService.userList({ _start, _limit });
-    let result = response.data || {};
-    commit(types.GET_USERS, result);
-    return result;
+export async function getUsers ({ commit }, params) {
+    const response = await UserService.userList(params);
+    let resp = response.data || {};
+    commit(types.GET_USERS, resp);
+    return resp;
 };
