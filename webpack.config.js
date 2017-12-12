@@ -110,13 +110,14 @@ var config = {
         }),
         // 启用作用域提升,让代码文件更小、运行的更快
         new webpack.optimize.ModuleConcatenationPlugin(),
-        // 压缩打包后moment的大小
+        // 压缩打包后moment的大小，只引入中英文版本
         new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /en|zh/)
     ],
     devServer: {
         // 本地环境主入口为 /src/index.html
         contentBase: './src',
-        historyApiFallback: true, //不跳转
+        //支持H5 History Mode模式，开启后刷新页面不会跳转404
+        historyApiFallback: true,
         noInfo: true,
         host: ip.address(),
         port: 8000,
