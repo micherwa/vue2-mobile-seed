@@ -1,30 +1,26 @@
 @import './var.scss';
 
+.c-333 {color: #333;}
+.c-666 {color: #666;}
+.c-999 {color: #999;}
+.c-4d { color: #4d4d4d; }
+.c-7b { color: #7b7b7b; }
+
+@for $i from 10 through 18 {
+    .f#{$i} {
+        font-size: $i + px !important;
+    }
+}
+.f0 { font-size: 0px !important; }
+.f20 { font-size: 20px !important; }
+
+.strong {font-weight: bold;}
 .pull-right {float: right;}
 .pull-left {float: left;}
 
 .text-center {text-align: center;}
 .text-right {text-align: right;}
 .text-left {text-align: left;}
-
-.c333 {color: #333;}
-.c666 {color: #666;}
-.c999 {color: #999;}
-.base-color { color: #4d4d4d; }
-.base-color-gray { color: #7b7b7b; }
-
-.f16 {font-size: 16px;}
-.f14 {font-size: 14px;}
-.f13 {font-size: 13px;}
-.f12 {font-size: 12px;}
-.f11 {font-size: 11px;}
-.strong {font-weight: bold;}
-
-.border-bottom-0 {border-bottom: 0 !important;}
-.border-bottom-1 {border-bottom: 1px solid $border-color !important;}
-.border-top-0 {border-top: 0 !important;}
-.border-top-1 {border-top: 1px solid $border-color !important;}
-
 
 .container {
     width: 100%;
@@ -48,4 +44,13 @@
     box-sizing: border-box;
 }
 
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+}

@@ -19,13 +19,17 @@
             </Checkbox>
         </div>
 
+        <div class="p-t-20 p-l-10">
+            <i class="fa fa-camera-retro f18"></i>
+        </div>
+
         <div class="modal-slot">
-            <MyModal v-if="showMyModal" @close="showMyModal = false" @confirm="handleConfirm">
+            <my-modal v-if="showMyModal" @close="showMyModal = false" @confirm="handleConfirm">
                 <h3 slot="header">header</h3>
                 <div slot="body">
                     <input type="tel" placeholder="请输入手机号" v-model="mobilePhone" maxlength="11" />
                 </div>
-            </MyModal>
+            </my-modal>
         </div>
 
     </div>
