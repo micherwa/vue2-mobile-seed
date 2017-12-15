@@ -170,9 +170,9 @@ if (isProd) {
                 drop_console: true
             }
         }),
-        // new webpack.LoaderOptionsPlugin({
-        //     minimize: true
-        // }),
+        new webpack.LoaderOptionsPlugin({
+            minimize: true
+        }),
         // optimize module ids by occurrence count
         new webpack.optimize.OccurrenceOrderPlugin()
     ]);
