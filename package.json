@@ -33,6 +33,7 @@
     "lodash-webpack-plugin": "^0.11.4",
     "mint-ui": "^2.2.9",
     "moment": "^2.19.4",
+    "vconsole": "^3.1.0",
     "vue": "2.3.4",
     "vue-router": "^2.7.0",
     "vuex": "^2.3.1"

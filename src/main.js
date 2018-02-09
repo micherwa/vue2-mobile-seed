@@ -10,6 +10,11 @@ import VueRouter from 'vue-router';
 import 'components';
 import 'font-awesome/css/font-awesome.css';
 
+var VConsole = require('vconsole/dist/vconsole.min.js');
+var vConsole = new VConsole();
+vConsole.show();
+console.log('Hello world');
+
 // 注册vue组件
 Vue.use(Mint);
 Vue.use(VueRouter);
