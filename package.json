@@ -20,23 +20,22 @@
     "url": "https://github.com/micherwa/vue2-mobile-seed/issues"
   },
   "scripts": {
-    "start": "cross-env NODE_ENV=development webpack-dev-server --inline",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --inline --open",
     "build": "rimraf dist && cross-env NODE_ENV=production webpack --progress --hide-modules",
     "eslint": "eslint --fix --ext js,vue src"
   },
   "dependencies": {
-    "axios": "^0.17.0",
-    "babel-plugin-lodash": "^3.3.2",
-    "babel-polyfill": "^6.26.0",
+    "axios": "^0.17.1",
+    "babel-plugin-lodash": "^3.3.4",
     "font-awesome": "^4.7.0",
-    "lodash": "^4.17.4",
-    "lodash-webpack-plugin": "^0.11.4",
-    "mint-ui": "^2.2.9",
-    "moment": "^2.19.4",
+    "lodash": "^4.17.10",
+    "lodash-webpack-plugin": "^0.11.5",
+    "mint-ui": "^2.2.13",
+    "moment": "^2.22.2",
     "vconsole": "^3.1.0",
-    "vue": "2.3.4",
-    "vue-router": "^2.7.0",
-    "vuex": "^2.3.1"
+    "vue": "^2.5.16",
+    "vue-router": "^2.8.1",
+    "vuex": "^2.5.0"
   },
   "devDependencies": {
     "ajv": "^5.3.0",
@@ -44,8 +43,10 @@
     "babel-core": "^6.0.0",
     "babel-eslint": "^7.2.3",
     "babel-loader": "^7.1.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-stage-3": "^6.24.1",
+    "babel-runtime": "^6.26.0",
     "copy-webpack-plugin": "^4.0.1",
     "cross-env": "^3.0.0",
     "css-loader": "^0.25.0",
@@ -71,8 +72,8 @@
     "vue-html-loader": "^1.2.4",
     "vue-loader": "12.2.1",
     "vue-style-loader": "^3.0.1",
-    "vue-template-compiler": "2.3.4",
-    "webpack": "^3.4.1",
-    "webpack-dev-server": "^2.4.5"
+    "vue-template-compiler": "^2.5.16",
+    "webpack": "^3.12.0",
+    "webpack-dev-server": "^2.11.2"
   }
 }

@@ -1,4 +1,3 @@
-import 'babel-polyfill';
 import Vue from 'vue';
 import routes from './views/routes';
 import App from './views/app.vue';

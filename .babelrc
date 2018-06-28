@@ -1,7 +1,7 @@
 {
     "presets": [
-        ['env', { 'modules': false }],
+        ["env", { "modules": false }],
         "stage-3"
     ],
-    plugins: ['lodash']
+    "plugins": ["lodash", "transform-runtime"]
 }
