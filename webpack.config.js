@@ -68,16 +68,7 @@ var config = {
     resolve: {
         extensions: ['*', '.vue', '.js'],
         alias: {
-            'src': path.join(__dirname, './src'),
-            'css': path.join(__dirname, './src/css'),
-            'assets': path.join(__dirname, './src/assets'),
-            'components': path.join(__dirname, './src/components'),
-            'constants': path.join(__dirname, './src/constants'),
-            'directives': path.join(__dirname, './src/directives'),
-            'filters': path.join(__dirname, './src/filters'),
-            'utils': path.join(__dirname, './src/utils'),
-            'services': path.join(__dirname, './src/services'),
-            'views': path.join(__dirname, './src/views'),
+            '@': path.join(__dirname, './src'),
             'vue$': 'vue/dist/vue.js'
         }
     },

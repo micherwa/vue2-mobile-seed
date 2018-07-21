@@ -1,12 +1,12 @@
 import Vue from 'vue';
-import routes from './views/routes';
-import App from './views/app.vue';
+import routes from '@/views/routes';
+import App from '@/views/app.vue';
 import Mint from 'mint-ui';
 import 'mint-ui/lib/style.css';
-import 'css/app.scss';
-import store from './store/index';
+import '@/css/app.scss';
+import store from '@/store/index';
 import VueRouter from 'vue-router';
-import 'components';
+import '@/components';
 import 'font-awesome/css/font-awesome.css';
 
 var VConsole = require('vconsole/dist/vconsole.min.js');

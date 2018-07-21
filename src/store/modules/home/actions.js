@@ -1,4 +1,4 @@
-import UserService from 'services/UserService';
+import UserService from '@/services/UserService';
 import * as types from './types';
 
 export async function getUsers ({ commit }, params) {
