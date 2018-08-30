@@ -117,10 +117,7 @@ if (isDev) {
         devtool: 'cheap-source-map',
         devServer: {
             hot: true,
-            // 本地环境主入口为 /src/index.html
             contentBase: './src',
-            //支持H5 History Mode模式，开启后刷新页面不会跳转404
-            // historyApiFallback: true,
             noInfo: true,
             host: devServerHost,
             port: devServerPort,
@@ -131,9 +128,6 @@ if (isDev) {
                 changeOrigin: true
             },
             clientLogLevel: 'warning',
-            // compress: true,
-            // open: true,
-            // quiet: true, // necessary for FriendlyErrorsPlugin
             overlay: { warnings: false, errors: true },
             watchOptions: { poll: false }
         },
@@ -142,7 +136,6 @@ if (isDev) {
             // https://github.com/ampedandwired/html-webpack-plugin
             new HtmlWebpackPlugin({
                 template: './index.html',
-                // 允许插件把css和js分别插入head与body
                 inject: true
             })
         ]
@@ -186,7 +179,6 @@ if (isProd) {
             new HtmlWebpackPlugin({
                 filename: 'index.html',
                 template: './index.html',
-                // 允许插件把css和js分别插入head与body
                 inject: true,
                 minify: {
                     // more options: https://github.com/kangax/html-minifier#options-quick-reference
