@@ -7,7 +7,7 @@ import '@/css/app.scss';
 import store from '@/store/index';
 import VueRouter from 'vue-router';
 import '@/components';
-import 'font-awesome/css/font-awesome.css';
+import 'font-awesome/css/font-awesome.min.css';
 
 var VConsole = require('vconsole/dist/vconsole.min.js');
 var vConsole = new VConsole();

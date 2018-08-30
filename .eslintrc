@@ -1,8 +1,10 @@
 {
     // eslint找到这个标识后，不会再去父文件夹中找eslint的配置文件
     "root": true,
+
     // 扩展一个流行的风格指南eslint-config-standard
-    "extends": "standard",
+    // "extends": "standard",
+
     // 插件的包名，省略前缀eslint-plugin-
     "plugins": [
         "html",
@@ -13,6 +15,7 @@
     "parser": "babel-eslint",
     // 表明自己的代码是ECMAScript模块
     "parserOptions": {
+        "parser": "babel-eslint",
         "sourceType": "module"
     },
     "rules": {
@@ -26,7 +29,7 @@
         "semi": ["error", "always"],
 
         // 禁止在代码行后使用内联注释
-        no-inline-comments: "error",
+        "no-inline-comments": "error",
 
         // 可以使用let v1,v2,v3连续(1不可以)
         "one-var": "off",
@@ -37,7 +40,7 @@
     "env": {
         "browser": true,
         "es6": true,
-        "amd": true
+        "node": true
     },
     // 如果想使用自定义的全局变量，可以在这里定义
     "globals": {

@@ -19,7 +19,7 @@ export default {
     methods: {
         async load () {
             await this.$store.dispatch('getUsers');
-            console.log(_.find(this.users, {'id': 1}));
+            console.log(_.find(this.users, {'id': 2}));
         },
         handleConfirm () {
             this.showMyModal = false;
