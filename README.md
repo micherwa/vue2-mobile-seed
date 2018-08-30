@@ -1,29 +1,26 @@
 ## vue2-mobile-seed
 
-> `vue2 webpack3 mint-ui`
+> `vue2 webpack4 mint-ui`
 
 
 ## 运行环境
 
-> `nodejs v8.7.0` `npm 5.4.2`
+> `nodejs v8.9.0` `npm 5.5.1`
 
 
 ## 技术栈
 
-> `vue2` `vue-router` `axios` `vuex` `mint-ui` `sass` `webpack3` `es6` `lodash` `moment`
+> `vue2` `vue-router` `axios` `vuex` `mint-ui` `sass` `webpack4` `es6` `lodash` `moment`
 
 
 ## 构建命令
 
 ```
 # install packages
-yarn == yarn install
+npm install
 
-# add/remove/upgrade packages
-yarn add/remove/upgrade package-name -D
-
-# serve with hot reload at http://xxx.xxx.xxx.xxx:8000
-npm start
+# serve with hot reload at 0.0.0.0:8000
+npm run dev
 
 # build for production with minification
 npm run build
