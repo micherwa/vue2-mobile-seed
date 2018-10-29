@@ -3,7 +3,7 @@ import routes from '@/views/routes';
 import App from '@/views/app.vue';
 import Mint from 'mint-ui';
 import 'mint-ui/lib/style.css';
-import '@/css/app.scss';
+import '@/styles/app.scss';
 import store from '@/store/index';
 import VueRouter from 'vue-router';
 import '@/components';

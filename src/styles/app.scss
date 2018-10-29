@@ -1,0 +1,128 @@
+@import "reset";
+@import "button";
+@import "list";
+@import "var";
+
+#app {
+    max-width: 750px;
+    min-width: 320px;
+    margin: auto;
+    overflow: auto;
+    color: #4d4d4d;
+    height: 100%;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+    -webkit-font-smoothing: antialiased;
+}
+
+.c-333 {
+    color: $color-333 !important;
+}
+.c-666 {
+    color: $color-666 !important;
+}
+.c-999 {
+    color: $color-999 !important;
+}
+.c-white {
+    color: $color-white !important;
+}
+.c-blue {
+    color: $color-blue !important;
+}
+
+.bg-fa {
+    background-color: $color-fa !important;
+}
+
+.strong { font-weight: bold; }
+.pull-right { float: right; }
+.pull-left { float: left; }
+
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-left { text-align: left; }
+
+.img-responsive {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+}
+
+.center-block {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.box-sizing {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+@for $i from 10 through 18 {
+    .f#{$i} {
+        font-size: $i + px !important;
+    }
+}
+.f0 { font-size: 0px !important; }
+.f20 { font-size: 20px !important; }
+.f30 { font-size: 30px !important; }
+
+// class= "p-r-1 p-t-1 p-b-1 p-l-1"
+// 生成4个方向padding 0-30px
+@for $i from 0 through 30 {
+    .p-t-#{$i} {
+        padding-top: $i + px !important;
+    }
+    .p-b-#{$i} {
+        padding-bottom: $i + px !important;
+    }
+    .p-l-#{$i} {
+        padding-left: $i + px !important;
+    }
+    .p-r-#{$i} {
+        padding-right: $i + px !important
+    }
+}
+
+// class= "m-r-1 m-t-1 m-b-1 m-l-1"
+// 生成4个方向margin 0-30px
+@for $i from 0 through 30 {
+    .m-t-#{$i} {
+        margin-top: $i + px !important;
+    }
+    .m-b-#{$i} {
+        margin-bottom: $i + px !important
+    }
+    .m-l-#{$i} {
+        margin-left: $i + px !important;
+    }
+    .m-r-#{$i} {
+        margin-right: $i + px !important;
+    }
+}
+
+// 生成宽度(以10px为跨度) 50-250px
+@for $i from 50 through 250 {
+    .w#{$i} {
+        width: $i + 10 + px !important;
+    }
+}
+.w300 {
+    width: 300px !important;
+}
+.w500 {
+    width: 500px !important;
+}
