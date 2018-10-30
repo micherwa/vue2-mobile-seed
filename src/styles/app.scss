@@ -71,14 +71,12 @@
     justify-content: space-between;
 }
 
-@for $i from 10 through 18 {
-    .f#{$i} {
-        font-size: $i + px !important;
+@for $i from 4 through 15 {
+    .f#{$i*2} {
+        font-size: $i * 2px !important;
     }
 }
 .f0 { font-size: 0px !important; }
-.f20 { font-size: 20px !important; }
-.f30 { font-size: 30px !important; }
 
 // class= "p-r-1 p-t-1 p-b-1 p-l-1"
 // 生成4个方向padding 0-30px
@@ -115,9 +113,9 @@
 }
 
 // 生成宽度(以10px为跨度) 50-250px
-@for $i from 50 through 250 {
-    .w#{$i} {
-        width: $i + 10 + px !important;
+@for $i from 5 through 25 {
+    .w#{$i*10} {
+        width: $i * 10px !important;
     }
 }
 .w300 {
