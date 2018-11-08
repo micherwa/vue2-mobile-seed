@@ -34,7 +34,8 @@
         // 可以使用let v1,v2,v3连续(1不可以)
         "one-var": "off",
 
-        "no-irregular-whitespace": "off",
+        // 要求函数圆括号之前有一个空格
+        "space-before-function-paren": ["error", "always"],
     },
     // 预定义的全局变量，这样在代码中可以放心使用宿主环境提供的全局变量。
     "env": {
